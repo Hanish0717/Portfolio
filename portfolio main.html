@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hanish's Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            transition: background 0.5s, color 0.5s;
+        }
+
+        .dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        #toggleMode {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: #555;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 200;
+        }
+
+        #toggleMode:hover {
+            background: #333;
+        }
+
+        /* Intro Section */
+        .intro {
+            text-align: center;
+            padding: 100px 20px 60px;
+            background: linear-gradient(to right, #2193b0, #6dd5ed);
+            color: white;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        .intro h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .intro p {
+            font-size: 1.2em;
+            font-style: italic;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Menu Buttons */
+        .menu {
+            display: flex;
+            justify-content: center;
+            background-color: #2e3b55;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .menu button {
+            background-color: #4db6ac;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .menu button:hover {
+            background-color: #00796b;
+        }
+
+        .dark-mode .menu {
+            background-color: #1e1e2e;
+        }
+
+        .section {
+            display: none;
+            padding: 40px 60px;
+            background-color: #ffffff;
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        .section h2 {
+            color: #2e3b55;
+            margin-bottom: 15px;
+        }
+
+        .section p, .section li {
+            color: #37474f;
+            font-size: 16px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .dark-mode .section {
+            background-color: #1f1f1f;
+            color: #ddd;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+        }
+
+        .dark-mode .section h2,
+        .dark-mode .section p,
+        .dark-mode .section li {
+            color: #c7c7c7;
+        }
+
+        a {
+            color: #00838f;
+        }
+
+        .dark-mode a {
+            color: #80deea;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Dark Mode Toggle -->
+<button id="toggleMode"><i class="fas fa-moon"></i> Dark Mode</button>
+
+<!-- Intro Section -->
+<div class="intro">
+    <h1>Hello, I'm Hanish Kumar</h1>
+    <p>Web Developer | Cloud Enthusiast | CSE Student</p>
+</div>
+
+<!-- Menu -->
+<div class="menu">
+    <button onclick="showSection('about')"><i class="fas fa-user"></i> About Me</button>
+    <button onclick="showSection('personal')"><i class="fas fa-id-card"></i> Personal Info</button>
+    <button onclick="showSection('skills')"><i class="fas fa-cogs"></i> Skills</button>
+    <button onclick="showSection('education')"><i class="fas fa-graduation-cap"></i> Education</button>
+    <button onclick="showSection('contact')"><i class="fas fa-envelope"></i> Contact Me</button>
+</div>
+
+<!-- Sections -->
+<div id="about" class="section">
+    <h2><i class="fas fa-user"></i> About Me</h2>
+    <p>I'm <strong>Hanish Kumar</strong>, a Computer Science student passionate about creating websites, cloud-based solutions, and building software that solves real-world problems.</p>
+</div>
+
+<div id="personal" class="section">
+    <h2><i class="fas fa-id-card"></i> Personal Info</h2>
+    <p><strong>Name:</strong> Hanish Kumar</p>
+    <p><strong>Branch:</strong> Computer Science and Engineering</p>
+    <p><strong>Email:</strong> hanish@example.com</p>
+</div>
+
+<div id="skills" class="section">
+    <h2><i class="fas fa-cogs"></i> Skills</h2>
+    <ul>
+        <li>HTML, CSS, JavaScript</li>
+        <li>Python, Java</li>
+        <li>SQL, MongoDB</li>
+        <li>Git, GitHub</li>
+        <li>Responsive Web Design</li>
+    </ul>
+</div>
+
+<div id="education" class="section">
+    <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+    <ul>
+        <li>10th Grade - 96% - XYZ High School</li>
+        <li>12th Grade - 95% - ABC Junior College</li>
+        <li>B.Tech in CSE-aiml - 2022 to 2026 - Ongoing</li>
+    </ul>
+</div>
+
+<div id="contact" class="section">
+    <h2><i class="fas fa-envelope"></i> Contact Me</h2>
+    <p><strong>Email:</strong> hanishvavilapalli@gmail.com</p>
+    <p><strong>Phone:</strong> +91-9652770191</p>
+    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/hanish" target="_blank">linkedin.com/in/hanish</a></p>
+    <p><strong>GitHub:</strong> <a href="https://github.com/hanish" target="_blank">github.com/hanish</a></p>
+</div>
+
+<script>
+    function showSection(id) {
+        const sections = document.getElementsByClassName('section');
+        for (let i = 0; i < sections.length; i++) {
+            sections[i].style.display = 'none';
+        }
+        document.getElementById(id).style.display = 'block';
+    }
+
+    // Show About by default
+    showSection('about');
+
+    // Toggle Dark Mode
+    const toggleBtn = document.getElementById('toggleMode');
+    toggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        toggleBtn.innerHTML = document.body.classList.contains('dark-mode')
+            ? '<i class="fas fa-sun"></i> Light Mode'
+            : '<i class="fas fa-moon"></i> Dark Mode';
+    });
+</script>
+
+</body>
+</html>
